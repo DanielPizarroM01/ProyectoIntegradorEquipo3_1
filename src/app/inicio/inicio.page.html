@@ -1,10 +1,11 @@
 <ion-header>
   <ion-toolbar color="mycolor1">
     <ion-title>
-      <img src="assets\images\carpinteria.jpg" style="height: 40px;"/>
+      <img src="assets/images/carpinteria.jpg" style="height: 40px;" />
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button>
+     
+      <ion-button (click)="irAlCarrito()">
         <ion-icon slot="icon-only" name="cart"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -20,6 +21,8 @@
       Muebles hechos a mano con la mejor calidad y diseño personalizado.
     </ion-card-content>
   </ion-card>
+
+  
   <div class="menu-grid">
     <div class="menu-item" (click)="navigateTo('citas')">
       <img src="assets/images/calendario.png" alt="Agendar" />
@@ -42,13 +45,26 @@
       <p>Tienda Local</p>
     </div>
     <div class="menu-item" (click)="navigateTo('contacto')">
-      <img src="assets/images/calcular.png" alt="Contáctanos" />
+      <img src="assets/images/calcular.png" alt="Conversor" />
       <p>Conversor de Unidades</p>
+    </div>
+    
+    
+    <div class="menu-item" (click)="navigateTo('perfil')">
+      <img src="assets/images/usuario.png" alt="Perfil" />
+      <p>Configuración de Perfil</p>
     </div>
   </div>
 </ion-content>
+
 <ion-footer>
   <ion-toolbar color="mycolor1">
-    <ion-title>© Carpinteria García</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="salir()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+        Salir
+      </ion-button>
+    </ion-buttons>
+    <ion-title>© Carpintería García</ion-title>
   </ion-toolbar>
 </ion-footer>
