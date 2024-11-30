@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Botón de flecha para volver al inicio -->
+      <ion-back-button text="" icon="arrow-back" (click)="volverInicio()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agendar Cita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Icono de perfil -->
+  <div class="ion-text-center">
+    <ion-icon name="person-circle-outline" style="font-size: 100px;"></ion-icon>
+  </div>
+
+  <!-- Campo para motivo de la cita -->
+  <ion-item>
+    <ion-label position="floating">Motivo de la cita</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <!-- Campos para fecha y hora -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Día</ion-label>
+          <ion-input type="number" min="1" max="31"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Mes</ion-label>
+          <ion-input type="number" min="1" max="12"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Hora</ion-label>
+          <ion-input type="time"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
+  <div class="ion-text-center">
+    <ion-button expand="block" style="background-color: #8b6a12;">
+      Agendar cita
+    </ion-button>
+  </div>
+
+</ion-content>

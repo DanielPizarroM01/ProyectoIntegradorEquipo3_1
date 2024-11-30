@@ -4,7 +4,6 @@
       <img src="assets/images/carpinteria.jpg" style="height: 40px;" />
     </ion-title>
     <ion-buttons slot="end">
-     
       <ion-button (click)="irAlCarrito()">
         <ion-icon slot="icon-only" name="cart"></ion-icon>
       </ion-button>
@@ -22,7 +21,6 @@
     </ion-card-content>
   </ion-card>
 
-  
   <div class="menu-grid">
     <div class="menu-item" (click)="navigateTo('citas')">
       <img src="assets/images/calendario.png" alt="Agendar" />
@@ -31,10 +29,6 @@
     <div class="menu-item" (click)="navigateTo('catalogo')">
       <img src="assets/images/comedor.png" alt="Productos" />
       <p>Productos</p>
-    </div>
-    <div class="menu-item" (click)="navigateTo('quienes-somos')">
-      <img src="assets/images/consejos-y-trucos.png" alt="¿Quiénes Somos?" />
-      <p>Trucos y Consejos</p>
     </div>
     <div class="menu-item" (click)="irpreguntas()">
       <img src="assets/images/pregunta-y-respuesta.png" alt="Contáctanos" />
@@ -48,23 +42,23 @@
       <img src="assets/images/calcular.png" alt="Conversor" />
       <p>Conversor de Unidades</p>
     </div>
-    
-    
     <div class="menu-item" (click)="navigateTo('perfil')">
-      <img src="assets/images/usuario.png" alt="Perfil" />
+      <img src="assets/images/usuario.jpg" alt="Perfil" />
       <p>Configuración de Perfil</p>
     </div>
+  </div>
+
+  <!-- Botón de salir al final de los cuadros del menú -->
+  <div style="width: 100%; text-align: center; margin-top: 30px;">
+    <ion-button (click)="salir()" style="margin: 0 auto;">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      Salir
+    </ion-button>
   </div>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar color="mycolor1">
-    <ion-buttons slot="start">
-      <ion-button (click)="salir()">
-        <ion-icon slot="icon-only" name="log-out"></ion-icon>
-        Salir
-      </ion-button>
-    </ion-buttons>
     <ion-title>© Carpintería García</ion-title>
   </ion-toolbar>
 </ion-footer>

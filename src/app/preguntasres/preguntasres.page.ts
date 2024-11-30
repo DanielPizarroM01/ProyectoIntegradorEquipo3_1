@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+
+
+
 
 @Component({
   selector: 'app-preguntasres',
@@ -24,13 +28,16 @@ export class PreguntasresPage implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor(private navCtrl: NavController) {}
 
-  // Función para mostrar/ocultar la respuesta de una pregunta
+  
   toggleAnswer(index: number) {
     this.faqList[index].mostrarRespuesta = !this.faqList[index].mostrarRespuesta;
   }
   ngOnInit() {
   }
-
+  volverInicio() {
+    this.navCtrl.navigateBack('/inicio'); 
+  }
+  
 }

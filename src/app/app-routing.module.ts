@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ConversorUnidadesComponent } from './conversor-unidades/conversor-unidades.component';
+import { InicioPage } from './inicio/inicio.page';  // Asegúrate de que la ruta sea correcta
+
+
+
 
 
 const routes: Routes = [
-  {
+ {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
@@ -39,7 +44,16 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'catalogo', loadChildren: () => import('./catalogo/catalogo.module').then(m => m.CatalogoPageModule) },
   { path: 'carrito', loadChildren: () => import('./carrito/carrito.module').then(m => m.CarritoPageModule) },
-  
+
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfile.module').then(m => m.PerfilPageModule)
+  },
+  { path: '', component: InicioPage },
+  {
+    path: 'conversor-unidades',
+    loadChildren: () => import('./conversor-unidades/conversor-unidades.component').then(m => m.ConversorUnidadesComponent)
+  },
   
 ];
 

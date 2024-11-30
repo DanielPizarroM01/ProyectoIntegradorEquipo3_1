@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Conversor de Unidades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Unidad de entrada</ion-label>
+    <ion-select [(ngModel)]="unidadEntrada" placeholder="Selecciona">
+      <ion-select-option value="cm">Centímetros</ion-select-option>
+      <ion-select-option value="m">Metros</ion-select-option>
+      <ion-select-option value="km">Kilómetros</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Valor</ion-label>
+    <ion-input type="number" [(ngModel)]="valorEntrada"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Unidad de salida</ion-label>
+    <ion-select [(ngModel)]="unidadSalida" placeholder="Selecciona">
+      <ion-select-option value="cm">Centímetros</ion-select-option>
+      <ion-select-option value="m">Metros</ion-select-option>
+      <ion-select-option value="km">Kilómetros</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Resultado</ion-label>
+    <ion-input [value]="resultado" readonly></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="convertir()">Convertir</ion-button>
+</ion-content>

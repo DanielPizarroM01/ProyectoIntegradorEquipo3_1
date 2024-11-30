@@ -2,9 +2,14 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <!-- Botón de flecha para volver al inicio -->
-      <ion-back-button text="" icon="arrow-back" (click)="volverInicio()"></ion-back-button>
+      <ion-button (click)="volverInicio()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
-    <ion-title>Agendar Cita</ion-title>
+    <ion-title>
+      <!-- Título con flecha -->
+      Agendar Cita
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,7 +22,7 @@
   <!-- Campo para motivo de la cita -->
   <ion-item>
     <ion-label position="floating">Motivo de la cita</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input [(ngModel)]="motivo" type="text"></ion-input>
   </ion-item>
 
   <!-- Campos para fecha y hora -->
@@ -26,29 +31,22 @@
       <ion-col>
         <ion-item>
           <ion-label position="floating">Día</ion-label>
-          <ion-input type="number" min="1" max="31"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Mes</ion-label>
-          <ion-input type="number" min="1" max="12"></ion-input>
+          <ion-input [(ngModel)]="fecha" type="date"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col>
         <ion-item>
           <ion-label position="floating">Hora</ion-label>
-          <ion-input type="time"></ion-input>
+          <ion-input [(ngModel)]="hora" type="time"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-  
+  <!-- Botón para agendar la cita -->
   <div class="ion-text-center">
-    <ion-button expand="block" style="background-color: #8b6a12;">
+    <ion-button expand="block" style="background-color: #8b6a12;" (click)="agendarCita()">
       Agendar cita
     </ion-button>
   </div>
-
 </ion-content>

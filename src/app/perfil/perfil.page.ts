@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'; 
 import { AlertController } from '@ionic/angular'; 
+import { Router } from '@angular/router';  // Asegúrate de importar Router
 
 @Component({
   selector: 'app-perfil',
@@ -11,8 +12,12 @@ export class PerfilPage {
   correo: string = ''; 
   foto: string = ''; 
 
-  constructor(private alertController: AlertController) {
+  constructor(private alertController: AlertController, private router: Router) {
     this.cargarPerfil(); 
+    
+  }// Método para navegar al inicio
+  irAlInicio() {
+    this.router.navigate(['/inicio']); // Redirige al path raíz ('/')
   }
 
  
@@ -50,5 +55,6 @@ export class PerfilPage {
 
     await alert.present();
   }
+  
 }
 

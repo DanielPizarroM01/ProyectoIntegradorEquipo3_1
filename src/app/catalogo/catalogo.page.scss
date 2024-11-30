@@ -5,13 +5,25 @@ ion-card {
     border-radius: 8px;
     padding: 10px;
   }
+  .contenedor-img {
+    display: flex; /* O usa display: grid si prefieres Grid */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    height: 100%; /* Ajusta según sea necesario */
+    width: 100%; /* Ajusta según sea necesario */
+    overflow: hidden; /* Evita desbordamiento */
+  }
   
   ion-img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: cover;
+    width: auto; /* Permite que se ajuste según el contenido */
+    max-width: 100%; /* Previene que crezca más allá del contenedor */
+    height: auto; /* Mantén las proporciones */
+    object-fit: cover; /* Ajusta cómo se muestra la imagen */
   }
+  
+  
+  
+  
   
   ion-searchbar {
     margin: 10px;

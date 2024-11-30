@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-carrito',
@@ -9,7 +10,7 @@ export class CarritoPage implements OnInit {
   carrito: any[] = []; 
   total: number = 0;   
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
     this.cargarCarrito(); 
@@ -40,5 +41,9 @@ export class CarritoPage implements OnInit {
   calcularTotal() {
     this.total = this.carrito.reduce((acc, producto) => acc + producto.precio, 0);
   }
+  volverInicio() {
+    this.navCtrl.navigateBack('/catalogo'); 
+  }
+  
 }
 

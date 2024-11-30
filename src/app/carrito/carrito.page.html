@@ -1,5 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <!-- Botón de flecha a la izquierda del título -->
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="volverInicio()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Carrito de Compras</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -27,7 +33,6 @@
     <ion-note slot="end">{{ total | currency }}</ion-note>
   </ion-item>
 
- 
   <ng-template #carritoVacio>
     <ion-item>
       <ion-label>
@@ -36,7 +41,6 @@
     </ion-item>
   </ng-template>
 
- 
   <div *ngIf="carrito.length > 0" class="ion-text-center ion-padding">
     <ion-button expand="block" color="success">Proceder al Pago</ion-button>
   </div>

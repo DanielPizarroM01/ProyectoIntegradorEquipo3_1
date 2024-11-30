@@ -1,18 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="mycolor1">
+    
     <ion-buttons slot="start">
-    <ion-back-button text="" icon="arrow-back" (click)="volverInicio()"></ion-back-button>
+      <ion-button fill="clear" (click)="volverInicio()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-title>
-      Catalogo de Productos
+      Catálogo de Productos
     </ion-title>
+    <ion-buttons slot="end">
+      
+      <ion-button (click)="irAlCarrito()">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
   <ion-searchbar [(ngModel)]="searchText" placeholder="Buscar productos"></ion-searchbar>
 
+  
   <ion-card *ngFor="let producto of productosFiltrados()">
     <ion-img [src]="producto.imagen"></ion-img>
     <ion-card-header>
@@ -21,8 +32,6 @@
     </ion-card-header>
     <ion-card-content>
       <p>{{ producto.descripcion }}</p>
-      
-     
       <ion-button expand="block" color="warning" (click)="comprarProducto(producto)">
         Comprar
       </ion-button>

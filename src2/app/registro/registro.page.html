@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="mycolor1">
+    <ion-title class="header-title">
+      <img src="assets/images/carpinteria.jpg" alt="Carpintería" class="logo" />
+      <span>Carpintería</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <ion-card>
+      <ion-card-header class="ion-text-center">
+        <ion-card-title>Regístrate</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="formularioRegistro" novalidate>
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input formControlName="nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Correo Electrónico</ion-label>
+            <ion-input formControlName="correo" type="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input formControlName="password" type="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Confirmar Contraseña</ion-label>
+            <ion-input formControlName="confirmacionPassword" type="password"></ion-input>
+          </ion-item>
+          <div class="ion-text-center ion-margin-top">
+            <ion-button expand="block" color="mycolor2" (click)="guardar()">
+              <ion-icon slot="start" name="person-add-outline"></ion-icon>
+              Registrate
+            </ion-button>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

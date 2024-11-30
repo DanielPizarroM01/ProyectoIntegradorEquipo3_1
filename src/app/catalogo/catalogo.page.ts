@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular'; 
 import { Router } from '@angular/router'; 
+import { NavController } from '@ionic/angular'; 
 
 @Component({
   selector: 'app-catalogo',
@@ -15,29 +16,29 @@ export class CatalogoPage {
       nombre: 'Mesa de Roble',
       descripcion: 'Mesa de madera maciza de roble con acabados naturales.',
       precio: 250,
-      imagen: 'assets/mesa-roble.jpg'
+      imagen: 'assets/catalogo/mesa_roble.jpg'
     },
     {
       nombre: 'Silla de Pino',
       descripcion: 'Silla ergonómica hecha de madera de pino tratada.',
       precio: 75,
-      imagen: 'assets/silla-pino.jpg'
+      imagen: 'assets/catalogo/silla_pino.jpg'
     },
     {
       nombre: 'Estantería de Caoba',
       descripcion: 'Estantería robusta de madera de caoba ideal para oficinas o salas de estar.',
       precio: 400,
-      imagen: 'assets/estanteria-caoba.jpg'
+      imagen: 'assets/catalogo/estanteria.jpg'
     },
     {
       nombre: 'Puerta de Cedro',
       descripcion: 'Puerta de madera de cedro con diseño clásico y elegante.',
       precio: 500,
-      imagen: 'assets/puerta-cedro.jpg'
+      imagen: 'assets/catalogo/puerta.jpeg'
     }
   ];
 
-  constructor(private alertController: AlertController, private router: Router) {} 
+  constructor(private alertController: AlertController, private router: Router, private navCtrl: NavController) {} 
 
   productosFiltrados() {
     if (!this.searchText) {
@@ -84,5 +85,8 @@ export class CatalogoPage {
   }
   volverInicio() {
     this.router.navigate(['/inicio']); 
+}
+irAlCarrito() {
+  this.navCtrl.navigateForward('/carrito');
 }
 }
